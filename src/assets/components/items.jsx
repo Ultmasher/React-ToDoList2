@@ -1,5 +1,5 @@
-import checkedImage from "../images/checked2.png";
-import uncheckedImage from "../images/unchecked.png";
+import checkedImage from "../../images/checked2.png"
+import uncheckedImage from "../../images/unchecked.png";
 
 
 const Items = ({tasks, setInputValue, setEditId, setIsEditing,setTasks}) => {
