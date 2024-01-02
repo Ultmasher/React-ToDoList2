@@ -1,35 +1,21 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import "./App.css";
+import ItemList from "./components/ItemList";
+import Form from "./components/Form";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [tasks, setTasks] = useState([]);
+  const [inputValue, setInputValue] = useState("");
+  const [editId, setEditId] = useState(null);
+  const [isEditing, setIsEditing] = useState(false);
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <h2>To-Do-List</h2>
+      <Form tasks={tasks} setInputValue={setInputValue}inputValue={inputValue} setTasks={setTasks} setIsEditing={setIsEditing}isEditing={isEditing} editId={editId} setEditId={setEditId}/>
+      <ItemList tasks={tasks} setInputValue={setInputValue} setEditId={setEditId} setIsEditing={setIsEditing} setTasks={setTasks}/>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
